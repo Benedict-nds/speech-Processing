@@ -35,43 +35,34 @@ ENV/
 
 # Jupyter Notebook
 .ipynb_checkpoints
-*.ipynb
+# Allow notebooks in notebooks/ directory
+!notebooks/*.ipynb
 
 # Data (keep structure, ignore content)
-data/raw/*
-data/processed/*
-data/features/*
-data/biomarkers/*
-!data/raw/.gitkeep
-!data/processed/.gitkeep
-!data/features/.gitkeep
-!data/biomarkers/.gitkeep
+**/data/raw/*
+**/data/processed/*
+**/data/features/*
+!**/data/raw/.gitkeep
+!**/data/processed/.gitkeep
+!**/data/features/.gitkeep
 
-# Models and Outputs
-outputs/models/*
-outputs/logs/*
-outputs/plots/*
-outputs/reports/*
-outputs/biomarkers/*
-!outputs/models/.gitkeep
-!outputs/logs/.gitkeep
-!outputs/plots/.gitkeep
-!outputs/reports/.gitkeep
-!outputs/biomarkers/.gitkeep
+# Models and Outputs (keep structure, ignore content)
+**/results/models/*
+**/results/plots/*
+**/results/tables/*
+**/results/logs/*
+!**/results/models/.gitkeep
+!**/results/plots/.gitkeep
+!**/results/tables/.gitkeep
+!**/results/logs/.gitkeep
 
-# Experiments
-experiments/*
-!experiments/.gitkeep
-
-# Weights & Biases
-wandb/
-
-# MLflow
-mlruns/
-
-# DVC
-.dvc/
-.dvcignore
+# Report (keep structure, ignore content)
+**/report/figures/*
+**/report/tables/*
+**/report/draft/*
+!**/report/figures/.gitkeep
+!**/report/tables/.gitkeep
+!**/report/draft/.gitkeep
 
 # OS
 .DS_Store
@@ -85,4 +76,14 @@ Thumbs.db
 *.tmp
 *.log
 *.cache
+
+# Weights & Biases
+wandb/
+
+# MLflow
+mlruns/
+
+# DVC
+.dvc/
+.dvcignore
 
